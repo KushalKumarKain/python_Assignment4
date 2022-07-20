@@ -1,5 +1,5 @@
+import time
 from abc import ABC, abstractmethod
-
 
 class main_abstract(ABC):
     @abstractmethod
@@ -7,8 +7,25 @@ class main_abstract(ABC):
         pass
 
 number = int(input("Enter number of choice : "))
+
+#####################################################
+# defining a decoratoe function
+def cal_time(func):    
+    def inner1(*args):
+ 
+        begin = time.time()
+         
+        func(*args)
+ 
+        end = time.time()
+        print("Total time taken for execution : /", end - begin, "/ seconds")
+ 
+    return inner1
+#####################################################
+
 class fibo(main_abstract):
-   def run(self, number):
+  @cal_time #placing the decorator.
+  def run(self, number):
             
          n1, n2 = 0, 1
          count = 0
@@ -21,6 +38,7 @@ class fibo(main_abstract):
             print(n1)
          # generate fibonacci sequence
          else:
+            time.sleep(2)
             print("Fibonacci sequence:")
             while count < number:
                print(n1)
