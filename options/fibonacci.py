@@ -1,8 +1,11 @@
 # from . import base
 from base import main_abstract
+from base import cal_time
+import time
 
 number = int(input("Enter number of choice : "))
 class fibo(main_abstract):
+   @cal_time #placing the decorator.
    def run(self, number):
             
          n1, n2 = 0, 1
@@ -16,6 +19,7 @@ class fibo(main_abstract):
             print(n1)
          # generate fibonacci sequence
          else:
+            time.sleep(2)
             print("Fibonacci sequence:")
             while count < number:
                print(n1)

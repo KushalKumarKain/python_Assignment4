@@ -1,13 +1,16 @@
 # from . import base
 from base import main_abstract
+from base import cal_time
+import time
 
 number = int(input("Enter number of choice : "))
 
 class arm(main_abstract):
-   def run(self, number):
+  @cal_time #placing the decorator.
+  def run(self, number):
      
     sum = 0
-
+    time.sleep(2)
     temp = number
     while temp > 0:
       digit = temp % 10
