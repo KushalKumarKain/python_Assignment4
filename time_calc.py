@@ -9,7 +9,7 @@ class main_abstract(ABC):
 number = int(input("Enter number of choice : "))
 
 #####################################################
-# defining a decoratoe function
+# defining a decorator function
 def cal_time(func):    
     def inner1(*args):
  
